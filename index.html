@@ -117,44 +117,29 @@
         }
 
         /* ============================================
-           IMAGE PLACEHOLDERS
+           ARTICLE IMAGES
            ============================================ */
-        .image-slot {
-            background: #e8f5e9;
-            border: 2px dashed #81c784;
+        .article-image {
             border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
+            overflow: hidden;
             margin: 2rem 0;
-            min-height: 260px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
         }
 
-        .image-slot .icon {
-            font-size: 3rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .image-slot .label {
-            font-weight: 600;
-            color: #2e7d32;
-            font-size: 1rem;
-            margin-bottom: 0.35rem;
-        }
-
-        .image-slot .description {
-            color: #558b2f;
-            font-size: 0.85rem;
-        }
-
-        .image-slot img {
-            border-radius: 8px;
+        .article-image img {
             width: 100%;
-            max-height: 400px;
+            height: auto;
+            display: block;
             object-fit: cover;
+        }
+
+        .article-image figcaption {
+            background: #f8fdf9;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            color: #4b5563;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
         }
 
         /* ============================================
@@ -561,7 +546,7 @@
            ============================================ */
         @media print {
             .hero { padding: 2rem; }
-            .image-slot { border: 1px solid #ccc; min-height: 100px; }
+            .article-image { box-shadow: none; border: 1px solid #ccc; }
         }
     </style>
 </head>
@@ -645,17 +630,16 @@
                 <strong>💡 Real Example:</strong> We worked with <strong>Mays Meats</strong>, a supplier located over two hours from our main locations in Asheville. Despite the distance, as long as we ordered <strong>$300 or more</strong>, they delivered right to our door every Thursday — on their existing route, at no additional charge.
             </div>
 
-            <!-- IMAGE PLACEHOLDER -->
-            <div class="image-slot">
-                <div class="icon">🏭</div>
-                <div class="label">IMAGE: Local Food Distribution Warehouse</div>
-                <div class="description">Photo of a regional food distributor warehouse with pallets of produce ready for delivery. Replace this placeholder with: images/wholesaler-warehouse.jpg</div>
-            </div>
+            <!-- IMAGE: Wholesaler Warehouse -->
+            <figure class="article-image">
+                <img src="images/wholesaler-warehouse.jpg" alt="Inside a regional food distribution warehouse with pallets of fresh produce ready for delivery" loading="lazy">
+                <figcaption>Regional food distributors supply restaurants and organizations at wholesale prices — and they'll deliver to you on their existing routes.</figcaption>
+            </figure>
 
             <h4>How to Find Distributors in Your Area</h4>
             <ol>
                 <li><strong>Google "[your city] restaurant food supplier"</strong> or "[your region] food distributor wholesale"</li>
-                <li><strong>Ask local restaurant owners</strong> who they buy from — most are happy to share, and some will even go in on orders with you to lower prices for everyone</li>
+                <li><strong>Ask local restaurant owners</strong> who they buy from — most are happy to share</li>
                 <li><strong>Check your state's Department of Agriculture website</strong> for licensed food distributors</li>
                 <li><strong>Search the USDA's <a href="https://www.ams.usda.gov/local-food-directories" target="_blank" rel="noopener">Local Food Directories</a></strong></li>
                 <li><strong>Call and ask directly:</strong> "We're a community organization looking to buy produce, dairy, and protein in bulk. Can we set up a wholesale account? What are your minimums and delivery schedules?"</li>
@@ -667,16 +651,15 @@
                 If you are anywhere in the USA near a <strong>US Foods Chef Store</strong> (formerly Cash & Carry), you have a powerful backup option. These are restaurant supply stores open to the public that provide food at steeply discounted rates.
             </p>
 
-            <!-- IMAGE PLACEHOLDER: US Foods Map -->
-            <div class="image-slot">
-                <div class="icon">🗺️</div>
-                <div class="label">IMAGE: US Foods Chef Store — National Location Map</div>
-                <div class="description">Screenshot of the US Foods Chef Store locator map showing locations across the US. Get it from: <a href="https://www.usfoods.com/our-services/chef-store/store-locator.html" target="_blank" rel="noopener">usfoods.com/our-services/chef-store/store-locator.html</a>. Replace this placeholder with: images/us-foods-map.jpg</div>
-            </div>
+            <!-- IMAGE: US Foods Map -->
+            <figure class="article-image">
+                <img src="images/us-foods-map.jpg" alt="National map of US Foods Chef Store locations across the United States" loading="lazy">
+                <figcaption>US Foods Chef Store locations across the country. Find yours at <a href="https://www.usfoods.com/our-services/chef-store/store-locator.html" target="_blank" rel="noopener">usfoods.com/our-services/chef-store/store-locator.html</a></figcaption>
+            </figure>
 
             <div class="callout callout-green">
                 <div class="callout-title">💰 Chef Store Savings Example</div>
-                <p>We sometimes sourced <strong>chicken at ~$1.28/lb</strong> when buying in increments of 40 pounds. At a regular grocery store, comparable chicken runs $3.99-$6.39/lb. That's <strong>68-80%+ savings</strong> on your protein alone.</p>
+                <p>We sometimes sourced <strong>chicken at ~$1.28/lb</strong> when buying in increments of 40 pounds. At a regular grocery store, comparable chicken runs $3.49-$4.99/lb. That's <strong>63-74% savings</strong> on your protein alone.</p>
                 <p style="margin-top: 0.75rem;">Employees at these stores sometimes have discretion to offer <strong>additional discounts</strong>, especially for community organizations buying in volume. It never hurts to ask and explain your mission.</p>
             </div>
 
@@ -697,12 +680,17 @@
                 </div>
             </div>
 
-            <!-- IMAGE PLACEHOLDER -->
-            <div class="image-slot">
-                <div class="icon">🌿</div>
-                <div class="label">IMAGE: Visiting a Local Farm</div>
-                <div class="description">Photo of community members visiting a farm or talking with a farmer at a roadside stand. Replace this placeholder with: images/farm-visit.jpg</div>
-            </div>
+            <!-- IMAGE: Farm Visit -->
+            <figure class="article-image">
+                <img src="images/farm-visit.jpg" alt="Community members visiting a local farm and talking with a farmer about sourcing produce" loading="lazy">
+                <figcaption>Building direct relationships with local farms unlocks the lowest prices — especially for bulk and "seconds" produce.</figcaption>
+            </figure>
+
+            <!-- IMAGE: Delivery Truck -->
+            <figure class="article-image">
+                <img src="images/delivery-truck.jpg" alt="A food distribution delivery truck making its route to grocery stores and restaurants" loading="lazy">
+                <figcaption>The same trucks that supply grocery stores can supply you directly — just ask the driver or the distribution company about placing an order on their route.</figcaption>
+            </figure>
 
             <div class="callout callout-amber">
                 <div class="callout-title">⚠️ A Note About Consistency</div>
@@ -748,12 +736,11 @@
                 <li>A group of 50 people each contributing $10/week = $500/week = <strong>enough to feed 500+ meals per week</strong></li>
             </ul>
 
-            <!-- IMAGE PLACEHOLDER -->
-            <div class="image-slot">
-                <div class="icon">🤝</div>
-                <div class="label">IMAGE: Community Fundraising</div>
-                <div class="description">Photo of people contributing to a collective fund, a donation jar at a rally, or a crowdfunding page on a phone screen. Replace this placeholder with: images/fundraising.jpg</div>
-            </div>
+            <!-- IMAGE: Fundraising -->
+            <figure class="article-image">
+                <img src="images/fundraising.jpg" alt="Community members contributing to a collective food fund with small donations" loading="lazy">
+                <figcaption>Many small contributions add up fast — especially when each dollar stretches 3-5x further at wholesale prices.</figcaption>
+            </figure>
 
             <h3>📊 Show Donors Exactly What Their Money Does</h3>
 
@@ -781,12 +768,11 @@
                 <p>If you are <strong>not selling the food</strong> — if you are giving it away to your supporters — you generally do <strong>not need a food service permit</strong> in most jurisdictions. This is the same legal framework that allows churches, community cookouts, and potlucks to operate. Always verify your local laws, but this is a significant advantage: <strong>free food distribution typically requires no permitting</strong>.</p>
             </div>
 
-            <!-- IMAGE PLACEHOLDER -->
-            <div class="image-slot">
-                <div class="icon">🍲</div>
-                <div class="label">IMAGE: Volunteer Cooking Team</div>
-                <div class="description">Photo of a team preparing large-batch meals, cooking in a community kitchen, or serving food at a rally. Replace this placeholder with: images/cooking-team.jpg</div>
-            </div>
+            <!-- IMAGE: Cooking Team -->
+            <figure class="article-image">
+                <img src="images/cooking-team.jpg" alt="A team of volunteers preparing large-batch meals together in a community kitchen" loading="lazy">
+                <figcaption>A dedicated cooking team turns wholesale ingredients into hundreds of meals — and creates jobs within your movement.</figcaption>
+            </figure>
         </div>
 
         <!-- ==========================================
@@ -847,12 +833,11 @@
                 </tbody>
             </table>
 
-            <!-- IMAGE PLACEHOLDER -->
-            <div class="image-slot">
-                <div class="icon">🌡️</div>
-                <div class="label">IMAGE: Food Safety Storage Order Diagram</div>
-                <div class="description">A clear visual diagram showing the refrigerator storage order described above. Replace this placeholder with: images/food-safety-storage.jpg</div>
-            </div>
+            <!-- IMAGE: Food Safety Storage -->
+            <figure class="article-image">
+                <img src="images/food-safety-storage.jpg" alt="Diagram showing the proper order for storing raw foods in a refrigerator from top to bottom: ready-to-eat, produce, eggs and fish, red meat, poultry" loading="lazy">
+                <figcaption>Always store foods in this order from top to bottom to prevent cross-contamination. Print this out and tape it to your fridge or cooler.</figcaption>
+            </figure>
 
             <h3>📚 Learn More About Food Safety</h3>
 
@@ -915,24 +900,22 @@
                 <div class="callout-title">The Three-Step Model</div>
                 <ol style="padding-left: 1.25rem;">
                     <li style="margin-bottom: 1rem;">
-                        <strong>Recruit Yards:</strong> Have homeowners donate the use of small portions of their yards for growing food. Many people have unused lawn space they'd happily convert — especially if someone else does the work and they get free produce in return.
+                        <strong>A. Recruit Yards:</strong> Have homeowners donate the use of small portions of their yards for growing food. Many people have unused lawn space they'd happily convert — especially if someone else does the work and they get free produce in return.
                     </li>
                     <li style="margin-bottom: 1rem;">
-                        <strong>Assign Gardeners:</strong> Have members of your movement start and manage these micro-gardens. This gives people within your movement meaningful work, a sense of purpose, and potentially a small income.
+                        <strong>B. Assign Gardeners:</strong> Have members of your movement start and manage these micro-gardens. This gives people within your movement meaningful work, a sense of purpose, and potentially a small income.
                     </li>
                     <li style="margin-bottom: 0;">
-                        <strong>Share the Harvest:</strong> Give a portion of each harvest to the homeowner (their "rent" for the yard space), and use the rest to feed your movement. Surplus can be sold at farmers markets or pop-up stands to generate revenue.
+                        <strong>C. Share the Harvest:</strong> Give a portion of each harvest to the homeowner (their "rent" for the yard space), and use the rest to feed your movement. Surplus can be sold at farmers markets or pop-up stands to generate revenue.
                     </li>
                 </ol>
             </div>
 
-            <!-- IMAGE PLACEHOLDER -->
-            <div class="image-slot">
-                <div class="icon">🏡</div>
-                <div class="label">IMAGE: Community Garden in a Residential Yard</div>
-                <div class="description">Photo of a small, productive garden in someone's front or back yard — raised beds, rows of vegetables, someone tending plants. Replace this placeholder with: images/community-garden.jpg</div>
-                <img src="/images/community-garden.jpg" />
-            </div>
+            <!-- IMAGE: Community Garden -->
+            <figure class="article-image">
+                <img src="images/community-garden.jpg" alt="A productive community garden with raised beds of vegetables growing in a residential yard" loading="lazy">
+                <figcaption>Converting unused yard space into productive micro-gardens builds long-term food security and gives movement members meaningful work.</figcaption>
+            </figure>
 
             <h4>🎓 Getting Training</h4>
 
@@ -953,7 +936,7 @@
                     The Commonwealth Grocers team is open to building software that scales gardening training to many, many people — or gives people without any experience a step-by-step process to follow so <strong>anyone</strong> can do it. If your movement can manage the on-the-ground operations, we can help build the tools to coordinate it.
                 </p>
                 <p style="margin-bottom: 0; margin-top: 0.75rem;">
-                    <a href="https://www.linkedin.com/in/dylan-stone-miller/" target="_blank" rel="noopener">Reach out</a> if you're interested.
+                    <a href="https://github.com/commonwealth-grocers" target="_blank" rel="noopener">Reach out through our GitHub</a> if you're interested.
                 </p>
             </div>
 
@@ -984,8 +967,8 @@
             <li>
                 <span class="icon">💻</span>
                 <div>
-                    <strong><a href="https://github.com/dstonem/iotp" target="_blank" rel="noopener">Commonwealth Grocers GitHub Repository</a></strong><br>
-                    Open-source software that can be adapted to support management of complex food systems — inventory tracking, order coordination, supplier management, and more. (Needs documentation, so reach out to the LinkedIn link above if you are seriously interested in adapting this for your movement)
+                    <strong><a href="https://github.com/commonwealth-grocers" target="_blank" rel="noopener">Commonwealth Grocers GitHub Repository</a></strong><br>
+                    Open-source software that can be adapted to support management of complex food systems — inventory tracking, order coordination, supplier management, and more.
                 </div>
             </li>
             <li>
@@ -1036,7 +1019,7 @@
             <p>
                 <strong>When people aren't hungry, they can hold the line.</strong>
             </p>
-            <a href="https://github.com/dstonem/iotp" class="button" target="_blank" rel="noopener">Get the Tools on GitHub →</a>
+            <a href="https://github.com/commonwealth-grocers" class="button" target="_blank" rel="noopener">Get the Tools on GitHub →</a>
         </div>
 
         <!-- ==========================================
@@ -1060,7 +1043,7 @@
         <p>
             Created with ✊ for movements everywhere &nbsp;|&nbsp;
             Inspired by <a href="https://commonwealthgrocers.com" target="_blank" rel="noopener">Commonwealth Grocers</a> &nbsp;|&nbsp;
-            <a href="https://github.com/dstonem/iotp" target="_blank" rel="noopener">Open Source on GitHub</a>
+            <a href="https://github.com/commonwealth-grocers" target="_blank" rel="noopener">Open Source on GitHub</a>
         </p>
         <p style="margin-top: 0.75rem; opacity: 0.7;">
             Share freely. Feed your people. Hold the line.
